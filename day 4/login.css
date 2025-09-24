@@ -1,0 +1,27 @@
+    label{
+        color: blue;
+        font-weight: 600;
+        font-size: 25px ;
+    }
+    #btn{
+        border-radius: 1000px;
+        width: 100px;
+        background-color: lightgreen;
+        font-size: 17px;
+        border-color: darkgreen;
+        cursor: pointer;
+    }
+    div.hello{
+            margin-top: 50px;
+            background-color: #ddff00;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-position: center;
+    }
+    div.hi{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }

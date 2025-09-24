@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenjiku Roles</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="menu">
+        <img src="images.png" alt="Tenjiku Logo">
+        <a href="home.html" class="home">Home</a>
+        <a href="about.html" class="about">About</a>
+        <a href="services.html" class="services">Services</a>
+        <a href="contact.html" class="contact">Contact</a>
+        <a href="rules.html" class="rules">Rules</a>
+        <a href="roles.html" class="roles" style="color:red;">Roles</a>
+    </nav>
+    <section class="roles-section">
+        <h1>Welcome to Tenjiku Roles</h1>
+        <p>Explore the various roles within the Tenjiku community. Click on any role to learn more!</p>
+        <ul class="roles-list">
+            <li onclick="showRolePopup('owner')"><span style="color: red;">Tenjiku's Owner:</span> The Owner of Tenjiku, or simply the head, having access to all commands/permissions.</li>
+            <li onclick="showRolePopup('coowner')"><span style="color: #333;">Tenjiku's Co-Owner:</span> Co-Owners are the ones helping the owner manage the group.</li>
+            <li onclick="showRolePopup('moderator')"><span style="color: orange;">Tenjiku's Moderator:</span> Moderators are the ones who help the owner and co-owners manage the group.</li>
+            <li onclick="showRolePopup('support')"><span style="color: #0000FF">Tenjiku's Support Team:</span> Helpers who assist members with questions and issues.</li>
+            <li onclick="showRolePopup('member')"><span style="color: blueviolet;">Tenjiku's Member:</span> Members can participate in discussions and access general channels.</li>
+            <li onclick="showRolePopup('division')">
+                <span style="color: rgb(29, 97, 255);">Tenjiku's Division Leaders:</span><br>
+                <b><span style="color: #ff6a00;">Division A:</span></b> The Highest Level of Division leaders, who help in implementing new plans to the server and have acquired this position by being the winner in the Fashion-Show.<br>
+                <b><span style="color: limegreen;">Division B:</span></b> Second Highest Level of Division leaders, who assist Division A in their tasks, acquired by the most-interactive member.<br>
+                <b><span style="color: rgb(3, 90, 90);">Division C:</span></b> Organizes and manages events within the community, while helping the other division leaders.
+            </li>
+            <li onclick="showRolePopup('bots')"><span style="color: gray;">Tenjiku's Bots:</span> The fellow managers of Tenjiku, enhancing the overall experience.</li>
+        </ul>
+        <a href="index.html" style=" font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 24px #f0981955;
+            transition: background 0.2s, transform 0.2s;
+            display: inline-block;">Back To index</a>
+    </section>
+    <!-- Popup Modal -->
+    <div id="rolePopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); align-items:center; justify-content:center; z-index:999;">
+        <div style="background:#fff; border-radius:16px; max-width:350px; width:90vw; padding:30px 20px; box-shadow:0 8px 32px #0005; text-align:center; position:relative;">
+            <span id="closePopup" style="position:absolute; top:10px; right:18px; font-size:2rem; color:#888; cursor:pointer;">&times;</span>
+            <h2 id="roleTitle" style="margin-bottom:0.7em;"></h2>
+            <div id="roleDesc" style="font-size:1.1rem; color:#333;"></div>
+        </div>
+    </div>
+<script>
+    const roleData = {
+        owner: {
+            title: "Tenjiku's Owner",
+            desc: "Current Holder: ITNARA (Samip Khatiwada)"
+        },
+        coowner: {
+            title: "Tenjiku's Co-Owner",
+            desc: "Current Holder: spider (Prabigya Shrestha)"
+        },
+        moderator: {
+            title: "Tenjiku's Moderator",
+            desc: "Current Holder: goofy_guy (Sabal Bajagain)"
+        },
+        support: {
+            title: "Tenjiku's Support Team",
+            desc: "Current Holder: Rajat Pandey"
+        },
+        member: {
+            title: "Tenjiku's Member",
+            desc: "Current Holder: All the Members of Tenjiku"
+        },
+        division: {
+            title: "Tenjiku's Division Leaders",
+            desc: "<b>Division A: Diwas Khatri</b><br><b>Division B: Aarav Mishra</b><br><b>Division C: Kavya Bhattarai</b>"
+        },
+        bots: {
+            title: "Tenjiku's Bots",
+            desc: "Arcane, Carl-Bot, Dank-Memer, Dyno, EasyPoll, StatBot, Uptime"
+        }
+    };
+
+    // Wait for DOM to be ready before attaching event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        window.showRolePopup = function(role) {
+            document.getElementById('roleTitle').innerHTML = roleData[role].title;
+            document.getElementById('roleDesc').innerHTML = roleData[role].desc;
+            document.getElementById('rolePopup').style.display = 'flex';
+        };
+        document.getElementById('closePopup').onclick = function() {
+            document.getElementById('rolePopup').style.display = 'none';
+        };
+        document.getElementById('rolePopup').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+    });
+</script>
+<!-- ...existing code... -->
+  <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(rgb(207, 180, 180),burlywood, rgb(241, 152, 152));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+                .menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 20px red;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 18px;
+            border: 2px solid rgb(240, 172, 82);
+            padding: 20px 30px;
+            margin-top: 32px;
+            width: 1300px;
+           
+            overflow: hidden;
+        }
+        .menu img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            margin-right: auto;
+            box-shadow: 0 0 10px #fff3;
+        }
+        .menu a {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 30px;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .menu a:hover, .menu .roles {
+            color: red;
+            background: rgba(255,255,255,0.2);
+        }
+        .roles-section {
+            margin: 60px 0 0 0;
+            padding: 40px 30px 30px 30px;
+            max-width: 1300px;
+            width: 1300px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 20px;
+            box-shadow: 0 0 35px aqua;
+            text-align: center;
+        }
+        .roles-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff5858, #f09819);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 0.5em;
+        }
+        .roles-section p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 2em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .roles-list {
+            text-align: left;
+            display: inline-block;
+            margin: 0 auto 2em auto;
+            font-size: 1.1rem;
+            color: #222;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+        }
+        .roles-list li {
+            margin-bottom: 1.2em;
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.6);
+            box-shadow: 0 2px 10px #f0981922;
+            cursor: pointer;
+        }
+        .roles-list span {
+            color: #ff5858;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        @media (max-width: 700px) {
+            .menu, .roles-section {
+                flex-direction: column;
+                align-items: center;
+                padding: 14px 8vw;
+                width: 98vw;
+                max-width: 100vw;
+            }
+            .menu img {
+                margin-bottom: 10px;
+            }
+            .roles-section h1 {
+                font-size: 1.5rem;
+            }
+        }
+                  /* ...existing styles... */
+    .roles-list li {
+        margin-bottom: 1.2em;
+        padding: 12px 18px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.6);
+        box-shadow: 0 2px 10px #f0981922;
+        cursor: pointer;
+        transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+    }
+    .roles-list li:hover {
+        transform: scale(1.06);
+        box-shadow: 0 6px 24px #f0981944;
+        z-index: 2;
+        background: #fff;
+    }
+    </style>

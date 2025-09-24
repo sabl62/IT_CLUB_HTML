@@ -1,0 +1,39 @@
+.loading{
+    width: 65px;
+    height: 65px;
+    border: 4px solid green;
+    background-color: white;
+    margin-left: 100px;
+    margin-top: 100px;
+    animation-name: loading; /*The keyframes name*/
+    animation-duration: 3s; /*total running time of animation*/
+    animation-iteration-count: infinite; /*how many times the animation plays*/
+    z-index: 1;
+     animation-timing-function: ease-in-out; /*for smooth  */
+    animation-fill-mode: forwards;   /* help animation to stay */
+    animation-direction: alternate;  /*how the animation plays, forward, backward etc, alternate is alternating between frwrd, bck*/
+    animation-delay: 1s; /*how late the animation starts*/
+     animation-play-state: paused; /* animation stops when paused and plays when running, useful for :hover */
+     cursor: pointer;
+}
+/* DEFINING THE ANIMATION: */
+@keyframes loading{
+    0%{
+     
+    }
+    37%{
+        transform: rotateX(180deg) rotateY(0) rotateZ(0) ;
+        border-radius: 16px;
+    }
+    69%{
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(0);
+        border-radius: 20px;
+    }
+    100%{
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+        border-radius: 50%;
+    }
+}
+.loading:hover{
+    animation-play-state: running;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form action="" onsubmit="validate()">
+        <input type="text" placeholder="First Name" id="fname" required><br> <br>
+        <input type="text" placeholder="Last Name" id="lname" required><br> <br>
+        <input type="email" placeholder="Email Adress" id="email" required><br> <br>
+        <input type="number" placeholder="Phone Number" id="phone" required><br> <br>
+        <input type="password" placeholder="Password" id="password"> <br> <br>
+        <button type="submit">Sign Up</button>
+    </form>
+
+</body>
+
+</html>
+<script>
+
+    function validate() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var pass = document.getElementById("password").value;
+        if (fname && lname && email && phone && pass) {
+            alert("Your form has been submitted successfully..!!");
+        }
+        else {
+            alert("Please fill out all the fields..!");
+        }
+    }
+</script>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 420px;
+            transition: transform 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+        }
+
+        form::before {
+            content: "Create Account";
+            display: block;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"] {
+            width: 100%;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fff;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="password"]:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        input[type="text"]:valid,
+        input[type="email"]:valid,
+        input[type="number"]:valid,
+        input[type="password"]:valid {
+            border-color: #28a745;
+        }
+
+        input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+        input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+        input[type="number"]:invalid:not(:focus):not(:placeholder-shown),
+        input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: #dc3545;
+            animation: shake 0.3s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* Placeholder styling */
+        input::placeholder {
+            color: #999;
+            font-weight: 400;
+        }
+
+        /* Remove default number input arrows */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            form {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            form::before {
+                font-size: 24px;
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="password"] {
+                padding: 14px 16px;
+                font-size: 16px;
+            }
+        }
+
+        /* Accessibility improvements */
+        input:focus {
+            outline: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Enhanced visual feedback */
+        input[type="text"]:hover,
+        input[type="email"]:hover,
+        input[type="number"]:hover,
+        input[type="password"]:hover {
+            border-color: #b8c5f2;
+        }
+
+        /* Password strength indicator styling */
+        input[type="password"]:focus {
+            background: linear-gradient(to right, #fff 0%, #fff 100%);
+        }
+}
+
+</style>

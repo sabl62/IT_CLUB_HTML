@@ -1,0 +1,12 @@
+img{
+    height: 300px;
+    width: 300px;
+}
+#btn{
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+}
+hr{
+    color: rgb(4, 0, 255);
+}

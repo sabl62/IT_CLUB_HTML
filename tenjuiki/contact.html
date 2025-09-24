@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Tenjiku</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images.png" type="image/x-icon">
+
+</head>
+<body>
+    <nav class="menu">
+        <img src="images.png" alt="Tenjiku Logo">
+        <a href="home.html" class="home">Home</a>
+        <a href="about.html" class="about">About</a>
+        <a href="services.html" class="services">Services</a>
+        <a href="contact.html" class="contact" style="color:red;">Contact</a>
+        <a href="rules.html" class="rules">Rules</a>
+        <a href="roles.html" class="roles">Roles</a>
+    </nav>
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+        <p>
+            Have questions, suggestions, or need help? Reach out to the Tenjiku team!<br>
+            We're here to support you and make your experience the best it can be.
+        </p>
+        <div class="contact-details">
+            <div>Email: <a href="mailto: tenjiku.ds@gmail.com">tenjiku.ds@gmail.com</a></div>
+            <div>Discord: <a href="https://discord.gg/JFnUxDjzVs" target="_blank" rel="noopener">Join Tenjiku Server</a></div>
+            <div>Instagram: <a href="https://instagram.com/tenjiku.ds/" target="_blank" rel="noopener">@tenjiku</a></div>
+        <form class="contact-form" autocomplete="off">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" disabled>Send Message</button>
+        </form><br><br>
+         <a href="index.html" style=" font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 24px #f0981955;
+            transition: background 0.2s, transform 0.2s;
+            display: inline-block;">Back To index</a>
+    </section>
+</body>
+</html>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(rgb(207, 180, 180),burlywood, rgb(241, 152, 152));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 20px red;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 18px;
+            border: 2px solid rgb(240, 172, 82);
+            padding: 20px 30px;
+            margin-top: 32px;
+            width: 1300px;
+           
+            overflow: hidden;
+        }
+        .menu img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            margin-right: auto;
+            box-shadow: 0 0 10px #fff3;
+        }
+        .menu a {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 30px;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .menu a:hover, .menu .contact {
+            color: red;
+            background: rgba(255,255,255,0.2);
+        }
+        .contact-section {
+            margin: 60px 0 0 0;
+            padding: 40px 30px 30px 30px;
+            max-width: 1300px;
+            width: 1300px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 20px;
+            box-shadow: 0 0 35px aqua;
+            text-align: center;
+        }
+        .contact-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff5858, #f09819);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 0.5em;
+        }
+        .contact-section p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 2em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-details {
+            font-size: 1.1rem;
+            color: #222;
+            margin-bottom: 2em;
+        }
+        .contact-details a {
+            color: #ff5858;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1.5px solid #f09819;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+        .contact-form button {
+            font-size: 1.1rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .contact-form button:hover {
+            background: linear-gradient(90deg, #f09819 0%, #ff5858 100%);
+            transform: scale(1.05);
+        }
+        @media (max-width: 700px) {
+            .menu, .contact-section {
+                flex-direction: column;
+                align-items: center;
+                padding: 14px 8vw;
+                width: 98vw;
+                max-width: 100vw;
+            }
+            .menu img {
+                margin-bottom: 10px;
+            }
+            .contact-section h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>

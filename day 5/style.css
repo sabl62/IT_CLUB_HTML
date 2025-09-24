@@ -1,0 +1,48 @@
+ .head{
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(to right, blue, purple);
+    -webkit-background-clip: text;
+    color: transparent;
+    width: 1000px;
+    text-align: center;
+     font-size: 100px;
+    }
+       
+        div.head{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    img{
+        width: 400px;
+    }
+    body{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-color: rgb(2, 98, 2);
+    }
+   .container{
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(85, 255, 0);
+    height: 1000px;
+    background-color: rgb(85, 255, 0);
+    margin: 100px;
+    background-position: center;
+    display: flex;
+    height: 50%;
+    box-shadow: 0 0 20px rgba(1, 53, 21, 0.7);
+   }
+   .haha{
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(85, 255, 0);
+    height: 1000px;
+    background-color: rgb(85, 255, 0);
+    margin: 100px;
+    background-position: center;
+    display: flex;
+    height: 50%;
+    box-shadow: 0 0 20px rgba(1, 53, 21, 0.7);
+   }
