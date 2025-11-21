@@ -25,8 +25,9 @@ function addTask(){
 }
 
 function displayTask(taskList){
+    var taskData = document.getElementById("inputBox").value;
     var container = document.getElementById('task-box');
     var task = document.createElement("div");
-    task.innerText = "task1";
+    task.innerText = taskData;
     container.appendChild(task)
 }
